@@ -12,6 +12,8 @@ function Book (props) {
           <h2 className="book-title">{props.title}</h2>
           <h3 className="book-author">{props.author}</h3>
           <p className="book-description">{props.description}</p>
+          <p className="book-selfLink">{props.selfLink}</p>
+          <a href={props.link}>{props.link}</a>
         </Card.Text>
       </Card.Body>
     </Card>

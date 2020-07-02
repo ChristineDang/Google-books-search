@@ -1,73 +1,67 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import { render } from 'react-dom';
+// import React, { useState } from 'react';
+// import axios from 'axios';
+// import { render } from 'react-dom';
 
-// export default {
-//     retrieve: function (query){
-//         const [books]
-//         return axios.get('https://www.googleapis.com/books/v1/volumes?q');
-//     }
+//post and save to database moved to server.js
+//may try to move it back to this page
 
-// }
+                //2nd attempt to post the saved books to the database
 
-function SearchBook(props) {
-    const[searchBook, setSearchBook] = useState('');
+                // class posting extends React.Component {
+                //   state = {
+                //     title: '',
+                //     author: '',
+                //     description: '',
+                //     image: '',
+                //     link: ''
+                //   };
 
-    const onInputChange = (e) => {
-        
-        setSearchBook(e.target.value);
-      }
-    
-      let API_URL = 'https://www.googleapis.com/books/v1/volumes';
-    
-      const [books, setBooks] = useState({ items: [] });
-    
-      const getBooks = async () => {
-        // call to Google Books API with axios
-        const result = await axios.get(`${API_URL}?q=${searchBook}`);
-        setBooks(result.data);
-        console.log(result.data);
-      }
-    
-      // submit handler
-      const submitHandler = (e) => {
-        e.preventDefault();
-        getBooks();
-      };
+                //   componentDidMount = () => {
+                //     this.getbookInfo();
+                //   };
 
-}
+                //   getbookInfo = () => {
+                //     Axios.get('/api')
+                //       .then((response) => {
+                //         const data = response.data;
+                //         this.setState({ posts: data });
+                //         console.log('data has been received');
+                //       })
+                //       .catch(() => {
+                //         alert('Error retrieving data');
+                //       });
+                //   }
 
-export default SearchBook;
+                //   handleChange = ({ target }) => {
+                //     const { name, value } = target;
+                //     this.setState({ [name]: value });
+                //   };
 
-// class searchBooks extends Component {
-//     state = {
-//         value: "",
-//         books: []
-//     };
-    
-//     componentDidMount () {
-//         API.booksSaved()
-//         .then(booksSaved => this.setState({ booksSaved: booksSaved }))
-//         .catch(err => console.error(err));
-//     };
+                //   submit = (event) => {
+                //     event.preventDefault();
 
-//     book = bookInfo => {
-//         return {
-//             _id: bookInfo.id,
-//             title: bookInfo.volumeInfo.title,
-//             author: bookInfo.volumeInfo.author,
-//             description: bookInfo.volumeInfo.description,
-//             image: bookInfo.volumeInfo.image,
-//             link: bookInfo.volumeInfo.link
-//         };
-//     };
+                //     const booksSaved = {
+                //       title: this.state.title,
+                //       author: this.state.author,
+                //       description: this.state.description,
+                //       image: this.state.image,
+                //       link: this.state.link
+                //     };
 
-//     searchBook = query => {
-//         API.getBook(query)
-//             .then(res => this.setState({ books: res.data.items.map(bookData => this.makeBook(bookData)) }))
-//             .catch(err => console.error(err));
-//     };
-// };
+                //     Axios({
+                //       url: 'pages/saved',
+                //       method: 'POST',
+                //       data: booksSaved
+                //     })
+                //     .then(() => {
+                //       console.log('data has been sent to the server');
+                //       this.resetUserInputs();
+                //     })
+                //     .catch(() => {
+                //       console.log('server error');
+                //     });
+                //   };
+                // }
 
 
 //saves book to database

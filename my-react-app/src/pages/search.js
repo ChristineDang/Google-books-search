@@ -1,4 +1,4 @@
-import React , { useState } from 'react';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Card, Form, FormControl, Button } from 'react-bootstrap'
 import { Container, Row, Col } from 'react-bootstrap';
@@ -57,7 +57,7 @@ function Search(props) {
               <Container>
                   <Row className="grid">
                         <Col md={6}>
-                            <Card style={{ width: '30rem', display: 'flex', flexDirection: 'row', flex: 1 }}>
+                            <Card style={{ width: 'auto', display: 'flex', flexDirection: 'row', flex: 1 }}>
                                     <Card.Body>
                                         <Card.Title>
                                             <Book
@@ -70,9 +70,17 @@ function Search(props) {
                                             <Book
                                                 author={book.volumeInfo.authors}
                                                 description={book.volumeInfo.description}
+                                                // selfLink={book.selfLink}
                                             />
                                         </Card.Text>
-                                        <Button variant="outline-success" type="submit">Save</Button>
+                                        <Card.Text>
+                                            <Book
+                                                link={book.volumeInfo.infoLink}
+                                            />    
+                                        </Card.Text>
+                                        <Form onSubmit={submitHandler} center>
+                                            <Button variant="outline-success" type="save">Save</Button>
+                                            </Form>
                                 </Card.Body>
                             </Card>
                         </Col>

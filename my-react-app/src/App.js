@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SearchBox from './pages/search.js';
+import Axios from 'axios';
 
 function App() {
   return (
